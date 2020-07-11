@@ -1,0 +1,179 @@
+/* open-sans-regular - latin_cyrillic */
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+   src: url('Medicine/app/med/static/fonts/open-sans-v17-latin_cyrillic-regular.eot'); /* IE9 Compat Modes */
+    src: local('Open Sans Regular'), local('OpenSans-Regular'),
+    url('Medicine/app/med/static/fonts/open-sans-v17-latin_cyrillic-regular?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('Medicine/app/med/static/fonts/open-sans-v17-latin_cyrillic-regular.woff2') format('woff2'), /* Super Modern Browsers */
+    url('Medicine/app/med/static/fonts/open-sans-v17-latin_cyrillic-regular.woff') format('woff'), /* Modern Browsers */
+    url('Medicine/app/med/static/fonts/open-sans-v17-latin_cyrillic-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('Medicine/app/med/static/fonts/open-sans-v17-latin_cyrillic-regular.svg#OpenSans') format('svg'); /* Legacy iOS */
+}
+/* open-sans-700 - latin_cyrillic */
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../../web/fonts/open-sans-v17-latin_cyrillic-700.eot'); /* IE9 Compat Modes */
+    src: local('Open Sans Bold'), local('OpenSans-Bold'),
+    url('Medicine/app/med/static/fonts/open-sans-v17-latin_cyrillic-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('Medicine/app/med/static/fonts/open-sans-v17-latin_cyrillic-700.woff2') format('woff2'), /* Super Modern Browsers */
+    url('Medicine/app/med/static/fonts/open-sans-v17-latin_cyrillic-700.woff') format('woff'), /* Modern Browsers */
+    url('Medicine/app/med/static/fonts/open-sans-v17-latin_cyrillic-700.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('Medicine/app/med/static/fonts/open-sans-v17-latin_cyrillic-700.svg#OpenSans') format('svg'); /* Legacy iOS */
+}
+*{
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    background: #a18cd1;
+}
+
+.container{
+    display: flex;
+    width: 1000px;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+form{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 450px;
+    transition: box-shadow 0.5s;
+    box-shadow: 0 0 20px rgba(81, 31, 200, 0.9);
+}
+
+form:hover{
+    transition: box-shadow 0.5s;
+    box-shadow: 0 0 5px rgba(81, 31, 200, 0.4);
+}
+
+#login{
+    margin-top: 30px;
+    color: white;
+    display: block;
+    position: relative;
+    padding-left: 15px;
+    border: none;
+    border-bottom: 1px solid rgba(81, 31, 200, 1);
+    border-radius: 0;
+    width: 70%;
+    height: 30px;
+    margin-bottom: 20px;
+    background: none;
+}
+
+
+#password{
+    color: white;
+    padding-left: 15px;
+    border: none;
+    border-radius: 0;
+    width: 70%;
+    height: 30px;
+    background: none;
+    border-bottom: 1px solid rgba(81, 31, 200, 1);
+}
+
+#login::placeholder, #password::placeholder{
+    color: white;
+    letter-spacing: 0.4px;
+}
+
+
+.submit{
+    margin-top: 70px;
+    z-index: 2;
+    position: relative;
+    width: 170px;
+    height: 40px;
+}
+
+.submit:after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: -5px;
+    bottom: -5px;
+    left: -5px;
+    right: -5px;
+    border-radius: 30px;
+    filter: blur(20px);
+    opacity: 0;
+    transition: opacity 0.5s;
+    background: linear-gradient(90deg, #db0f99,#8911d2, #3d2eec);
+    background-size: 400%;
+    animation: button 15s linear infinite;
+    background-size: 400%;
+    animation: button 15s linear infinite;
+}
+
+.submit:hover.submit:after{
+    opacity: 1;
+}
+.submit:active.submit:after{
+    opacity: 1;
+}
+
+#submit{
+    position: relative;
+    z-index: 3;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #3d2eec, #db0f9e,#d21183, #9107e5, #3d2eec);
+    background-size: 600%;
+    animation: button 15s linear infinite;
+}
+
+
+@keyframes button {
+    0%{
+        background-position: 0;
+    }
+    100%{
+        background-position: 400%;
+    }
+}
+#submit:focus{
+    outline: none;
+}
+#login:focus, #password:focus{
+    outline: none;
+    background: none;
+}
+
+.form-text{
+    z-index: -1;
+    font-size: 11px;
+    padding-top: 410px;
+    padding-left: 15px;
+    position: absolute;
+    bottom: 0;
+    color: white;
+    background-image: url("../img/icon/hotpng.com.png");
+    background-repeat: no-repeat;
+    background-size: 30px;
+    background-position: 135px 70px;
+    width: 100%;
+    height: 100%;
+}

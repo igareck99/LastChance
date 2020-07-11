@@ -1,0 +1,108 @@
+.add-patient-header{
+    margin-top: 50px;
+}
+
+.add-survey{
+    margin-bottom: 30px;
+    width: 100%;
+}
+.list-of-records table{
+    border-collapse: collapse;
+    width: 100%;
+}
+.list-of-records table,.list-of-records th,.list-of-records td,.list-of-records tr{
+    border: 1px solid #b9bec1;
+}
+
+.option{
+    margin-top: 30px;
+    width: 20%;
+    border: 1px solid #492D88;
+    background: none;
+    color: white;
+    height: 40px;
+    padding-left: 15px;
+    margin-right: 10px;
+}
+
+select{
+    padding-left: 15px;
+    border: 1px solid #492D88;
+    height: 40px;
+    background: none;
+}
+
+select:focus, .option, #add-record{
+    outline: none;
+}
+
+#Name, #Survey{
+    font-size: 16px;
+    margin-top: 30px;
+    color: white;
+    background: none;
+    border: 1px solid #492D88;
+    width: 30%;
+    height: 40px;
+    padding-left: 15px;
+    margin-right: 10px;
+}
+
+#add-record{
+    cursor: pointer;
+    background: #492D88;
+    text-align: center;
+    width: 15%;
+    height: 40px;
+    border: 1px solid #492D88;
+    border-radius: 20px;
+    color: white;
+}
+
+tbody{
+    font-size: 14px;
+}
+
+.list-of-records th{
+    font-weight: 400;
+    color: #2fcf64;
+    background: #492D88;
+    height: 30px;
+}
+
+.first-column-th, .first-column{
+    text-align: center;
+    width: 15%;
+    color: white;
+}
+
+.second-column-th, .second-column{
+    text-align: center;
+    width: 25%;
+    color:white;
+}
+
+.third-column-th, .third-column{
+    text-align: center;
+    width: 10%;
+    color:white;
+}
+
+.fourth-column-th, .fourth-column{
+    text-align: center;
+    width: 15%;
+    color:white;
+}
+
+.fifth-column-th, .fifth-column{
+    text-align: center;
+    width: 30%;
+    color:white;
+}
+
+
+.seven-column-th, .seven-column{
+    width: 10%;
+}
+
+

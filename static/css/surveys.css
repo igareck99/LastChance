@@ -1,0 +1,68 @@
+
+.add-survey{
+    margin-top: 50px;
+}
+
+.list-of-surveys{
+    margin-top: 50px;
+}
+
+.list-of-surveys{
+    width: 100%;
+    margin-top: 50px;
+}
+
+.list-of-surveys table{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.list-of-surveys table, .list-of-surveys th, .list-of-surveys td, .list-of-surveys tr{
+    border: 1px solid #b9bec1;
+}
+
+.list-of-surveys th{
+    font-weight: 400;
+    font-size: 17px;
+    color: #2fcf64;
+    background: #492D88;
+    height: 30px;
+}
+
+.first-column-th, .first-column{
+    color: white;
+    text-align: center;
+    width: 5%;
+}
+
+.second-column-th, .second-column{
+    color: white;
+    text-align: center;
+    width: 75%;
+}
+
+.third-column-th, .third-column{
+    color: white;
+    text-align: center;
+    width: 20%;
+}
+#Name{
+    font-size: 16px;
+    margin-top: 30px;
+    color: white;
+    background: none;
+    border-radius: 30px;
+    border: 1px solid #492D88;
+    width: 30%;
+    height: 40px;
+    padding-left: 15px;
+}
+
+
+#Name::placeholder{
+    color: white;
+}
+
+#Name:focus{
+    outline: none;
+}
