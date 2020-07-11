@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="apple-touch-icon" sizes="180x180" href="../../../static/img/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="../../../static/img/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="../../../static/img/favicon/favicon-16x16.png">
+	<link rel="stylesheet" href="../../../static/css/patients.css">
+	<title>Пациенты</title>
+	<script type="module" src="../../../static/js/patients.js"></script>
+</head>
+<body>
+	<nav>
+			<ul>
+				<li>
+					<a href="{% url 'Patients_page' %}">Пациенты</a>
+				</li>
+				<li>
+					<a href="{% url 'survey_page' %}">Обследования</a>
+				</li>
+				<li>
+					<a href="{% url 'record_page' %}">Запись</a>
+				</li>
+				<li>
+					<a href="{% url 'logout_page' %}">Выйти</a>
+				</li>
+			</ul>
+	</nav>
+
+	<section class="patients">
+		<div class="container">
+			<div class="patients-header">
+				Работа с пациентами
+			</div>
+			<div class="add-patient">
+                {% csrf_token %}
+				<div class="add-patient-header">Добавить пациента</div>
+				<input id='FIO' type="text" placeholder="ФИО" required>
+				<input id = 'card' type="text" placeholder="Номер мед карты" required>
+				<input id="create" type="button" value="Создать">
+			</div>
+			<div class="list-of-patients">
+				<table>
+					<tr id="beforeDelete">
+						<th class="first-column-th">№</th>
+						<th class="second-column-th">ФИО</th>
+						<th class="third-column-th">Мед карта</th>
+						<th class="fourth-column-th">Дата записи</th>
+						<th class="fifth-column-th">Операции</th>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</section>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../../static/img/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="../../../static/img/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="../../../static/img/favicon/favicon-16x16.png">
+	<link rel="stylesheet" href="../../../static/css/patients.css">
+	<link rel="stylesheet" href="../../../static/css/record.css">
+    <script src="../../static/js/record.js"></script>
+	<title>Запись пациента</title>
+</head>
+<body>
+<nav>
+	<ul>
+		<li>
+			<a href="{% url 'Patients_page' %}">Пациенты</a>
+		</li>
+		<li>
+			<a href="{% url 'survey_page' %}">Обследования</a>
+		</li>
+		<li>
+			<a href="{% url 'record_page' %}">Запись</a>
+		</li>
+		<li>
+			<a href="{% url 'logout_page' %}">Выйти</a>
+		</li>
+	</ul>
+</nav>
+<section class="record">
+	<div class="container">
+		<div class="patients-header">
+			Работа с записями
+		</div>
+		<div class="add-survey">
+			<div class="add-patient-header">Создать запись</div>
+			<select class="option" name="Name" id="Name">
+				<option selected disabled value="ФИО пациента">ФИО пациента</option>
+			</select>
+			<select class="option" name="Survey" id="Survey">
+				<option selected disabled value="Обследование">Обследование</option>
+			</select>
+			<input class="option" type="datetime-local" id="date">
+			<input id="add-record" type="button" value="Добавить">
+		</div>
+		<div class="list-of-records">
+			<table>
+				<tr id="beforeDelete">
+					<th class="first-column-th">№</th>
+					<th class="second-column-th">ФИО</th>
+					<th class="third-column-th">Мед карта</th>
+					<th class="fourth-column-th">Обследование</th>
+					<th class="fifth-column-th">Дата обследования</th>
+					<th class="seven-column-th">Операции</th>
+				</tr>
+			</table>
+		</div>
+	</div>
+</section>
+</body>
+</html>

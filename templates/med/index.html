@@ -1,0 +1,112 @@
+{%  load static %}
+<!doctype html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+	<link rel="stylesheet" href={%  static 'css/main.css' %}>
+	<title>Больница</title>
+    <style>
+    .field{margin-top: 30px;
+    color: white;
+    display: block;
+    position: relative;
+    padding-left: 15px;
+    border: none;
+    border-bottom: 1px solid rgba(81, 31, 200, 1);
+    border-radius: 0;
+    width: 70%;
+    height: 30px;
+    margin-bottom: 20px;
+    background: none;
+    }
+    .password{
+    color: white;
+    padding-left: 15px;
+    border: none;
+    border-radius: 0;
+    width: 70%;
+    height: 30px;
+    background: none;
+    border-bottom: 1px solid rgba(81, 31, 200, 1);
+    }
+    .button{
+    margin-top: 70px;
+    z-index: 2;
+    position: relative;
+    width: 170px;
+    height: 40px;
+    content: '';
+    display: block;
+    top: -5px;
+    bottom: -5px;
+    border-radius: 30px;
+    transition: opacity 0.5s;
+    background: linear-gradient(90deg, #db0f99,#8911d2, #3d2eec);
+    }
+    .submit:after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: -5px;
+    bottom: -5px;
+    left: -5px;
+    right: -5px;
+    border-radius: 30px;
+    filter: blur(20px);
+    opacity: 0;
+    transition: opacity 0.5s;
+    background: linear-gradient(90deg, #db0f99,#8911d2, #3d2eec);
+    background-size: 400%;
+    animation: button 15s linear infinite;
+    background-size: 400%;
+    animation: button 15s linear infinite;
+    }
+    .button:hover.button:after{
+    opacity: 1;
+    }
+    .button:active.button:after{
+    opacity: 1;
+    }
+
+    #button{
+    position: relative;
+    z-index: 3;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #3d2eec, #db0f9e,#d21183, #9107e5, #3d2eec);
+    background-size: 600%;
+    animation: button 15s linear infinite;
+    }
+
+    </style>
+	<script src="../../static/js/script.js"></script>
+</head>
+<body>
+	<div class="container form-holder">
+    <form id="create_group" method="post">
+        {% load widget_tweaks %}
+        <div class="form-text">
+						Если Вам нужен логин и пароль, обратитесь к начальству
+					</div>
+        {% csrf_token %}
+        <table>
+            {{ form.username|add_class:"field" }}
+
+            {{ form.password|add_class:"password" }}
+        </table>
+        <button type="submit" class="button" name="submitbtn" value="subm">Авторизироваться</button>
+    </form>
+</div>
+</body>
+</html>
