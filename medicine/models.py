@@ -13,8 +13,8 @@ class Man(models.Model):
 
 
 class Surveys(models.Model):
-    id = models.IntegerField(primary_key=True)
-    Survey = models.CharField(max_length = 50,db_index=True)
+    id = models.IntegerField(primary_key=True,db_index=True)
+    Survey = models.CharField(max_length = 50)
 
 
     def __str__(self):
@@ -33,6 +33,7 @@ class Record(models.Model):
     fio = models.CharField(max_length = 80,db_index=True)
     survey =  models.CharField(max_length = 80,db_index=True)
     Card = models.CharField(max_length = 80,db_index=True)
+    status = models.CharField(max_length=40, db_index=True,default='Ожидает')
     date = models.DateTimeField()
 
 

@@ -65,7 +65,7 @@ def record_list(request):  # cписок всех записей
         l = []
         result_dict = dict()
         for x in records:
-            l.append({'num':x.id, 'fio':x.fio, 'card': x.Card, 'survey': x.survey, 'surveyDate':str(x.date)[0:19]})
+            l.append({'num': x.id, 'fio': x.fio, 'card': x.Card, 'survey': x.survey, 'surveyDate': str(x.date)[0:19],'status': x.status})
     return JsonResponse(l,safe=False)
 
 
@@ -87,7 +87,6 @@ def Create(request):     # создание новго пациента
         r = request.body.decode()
         r = r.split(":")
         man_list = Man.objects.all()
-        ID = len(man_list) + 1
         data = datetime.now()
         man = Man()
         F = r[1].split(',')
@@ -141,7 +140,6 @@ def create_record(request):
 def delete_survey(request):
     if request.method == 'POST':
             d = request.body.decode().split(':')[1][0:-1]
-            print('aaaaaaa',d)
             d = d[1:-1]
             d = int(d)
             print(d)
@@ -156,12 +154,31 @@ def delete_record(request):
     if request.method == 'POST':
         try:
             d = int(request.body.decode())
-            print(d)
             survey = Record.objects.get(id=d)
             survey.delete()
             return HttpResponseRedirect('record/')
         except Surveys.DoesNotExist:
             return HttpResponseRedirect('record/')
+
+
+@csrf_exempt
+def done_record(request):
+    if request.method == 'POST':
+        d = int(request.body.decode())
+        record = Record.objects.get(id = d)
+        record.status = 'Сделано'
+        record.save()
+        return HttpResponseRedirect('/')
+
+
+@csrf_exempt
+def cancel_record(request):
+    if request.method == 'POST':
+        d = int(request.body.decode())
+        record = Record.objects.get(id=d)
+        record.status = 'Отменён'
+        record.save()
+        return HttpResponseRedirect('record/')
 
 
 

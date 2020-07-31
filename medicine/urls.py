@@ -15,7 +15,9 @@ urlpatterns = [
     re_path(r'delete_survey/$',delete_survey, name = 'delete_survey'),
     re_path(r'delete_record/$',delete_record, name = 'delete_record'),
     re_path(r'delete_man/$',delete_man, name = 'delete_man'),
-    re_path(r'html/patients.html$',Patients,name = 'authing'),
+    re_path(r'html/patients.html$', Patients,name = 'authing'),
+    re_path(r'done_record/$', done_record, name = 'done_record'),
+    re_path(r'cancel_record/$', cancel_record, name = 'cancel_record'),
     path('', UserLoginView.as_view(), name='login_page'),
     path('logout', UserLogoutView.as_view(), name='logout_page')
 
